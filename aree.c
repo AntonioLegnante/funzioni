@@ -2,38 +2,43 @@
 
 #include <stdio.h>
 #include <math.h>
-void quadrato(double lato);
-void cerchio(double raggio);
+double quadrato(double lato);
+double cerchio(double raggio);
 int main()
 {
-    double lato, raggio;
+    double lato, raggio, area;
     int scelta;
 
-    printf("scegli il calcolo dell'area");
-    printf("1 quadrato, 2 cerchio");
-    scanf("%d", &scelta);
-    if(scelta == 1)
-    {
-        printf("inserisci il lato");
-        scanf("%lf", &lato);
-        quadrato(lato);
-    }
-    else 
-    {
-        printf("inserisci il raggio");
-        scanf("%lf", &raggio);
-        cerchio(raggio);
-    }
+    printf("scegli il calcolo dell'area\n");
+    printf("1 quadrato, 2 cerchio\n");
+    do {
+        scanf("%d", &scelta);
+    }while(scelta < 0 || scelta > 2);
 
-    return 0;
+        if(scelta == 1)
+        {
+            printf("inserisci il lato\n");
+            scanf("%lf", &lato);
+            area = quadrato(lato);
+            printf("l'aria del quadrato e' : %f", area);
+        }
+        else if(scelta == 2)
+        {
+            printf("inserisci il raggio\n");
+            scanf("%lf", &raggio);
+            area = cerchio(raggio);
+            printf("l'aria del cerchio e' : %f", area);
+        }
+
+        return 0;
 }
 
-void quadrato(double lato)
+double quadrato(double lato)
 {
-    printf("%f", lato * lato);
+    return lato * lato;
 }
 
-void cerchio(double raggio)
+double cerchio(double raggio)
 {
-    printf("%f", pow(raggio, 2.) * 3,14);
+    return pow(raggio, 2.) * 3.14;
 }
