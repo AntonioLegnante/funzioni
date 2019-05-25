@@ -18,14 +18,20 @@ int main()
         if(scelta == 1)
         {
             printf("inserisci il lato\n");
-            scanf("%lf", &lato);
+            do{
+                scanf("%lf", &lato);
+            }while(lato < 0);
             area = quadrato(lato);
             printf("l'aria del quadrato e' : %f", area);
         }
         else if(scelta == 2)
         {
             printf("inserisci il raggio\n");
-            scanf("%lf", &raggio);
+
+            do{
+                scanf("%lf", &raggio);
+            }while(raggio < 0);
+
             area = cerchio(raggio);
             printf("l'aria del cerchio e' : %f", area);
         }
