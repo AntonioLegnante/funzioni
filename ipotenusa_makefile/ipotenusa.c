@@ -20,5 +20,5 @@ int main()
 
 double pitagora(double cateto1, double cateto2)
 {
-    return sqrt(pow(cateto1, 2) + pow(cateto2, 2));
+    return sqrt(cateto1 * cateto1 + cateto2 * cateto2);
 }
