@@ -40,5 +40,5 @@ double quadrato(double lato)
 
 double cerchio(double raggio)
 {
-    return pow(raggio, 2.) * 3.14;
+    return (raggio * raggio) * 3.14;
 }
