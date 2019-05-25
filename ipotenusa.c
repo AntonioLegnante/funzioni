@@ -3,19 +3,22 @@
 #include <stdio.h>
 #include <math.h>
 
-void ipotenusa(double cateto1, double cateto2);
+double pitagora(double cateto1, double cateto2);
 
 int main()
 {
-    double cateto1, cateto2;
-    cateto1 = 3.; cateto2 = 4.; ipotenusa(cateto1, cateto2);
-    cateto1 = 5.; cateto2 = 12.; ipotenusa(cateto1, cateto2);
-    cateto1 = 8.; cateto2 = 15.; ipotenusa(cateto1, cateto2);
+    double cateto1, cateto2, ipotenusa;
+    cateto1 = 3.; cateto2 = 4.; ipotenusa = pitagora(cateto1, cateto2);
+    printf("triangolo 2) lato 1: %f lato 2: %f ipotenusa %f\n", cateto1, cateto2, ipotenusa);
+    cateto1 = 5.; cateto2 = 12.; ipotenusa = pitagora(cateto1, cateto2);
+    printf("triangolo 2) lato 1: %f lato 2: %f ipotenusa %f\n", cateto1, cateto2, ipotenusa);
+    cateto1 = 8.; cateto2 = 15.; ipotenusa = pitagora(cateto1, cateto2);
+    printf("triangolo 3) lato 1: %f lato 2: %f ipotenusa %f\n", cateto1, cateto2, ipotenusa);
 
     return 0;
 }
 
-void ipotenusa(double cateto1, double cateto2)
+double pitagora(double cateto1, double cateto2)
 {
-    printf("%f\n", sqrt(pow(cateto1, 2) + pow(cateto2, 2)));
+    return sqrt(pow(cateto1, 2) + pow(cateto2, 2));
 }
