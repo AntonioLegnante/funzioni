@@ -1,6 +1,7 @@
 /*programma che inverte le cifre di un numero tramite una funzione*/
 
 #include <stdio.h>
+int costruisci(int numero, int cifra);
 
 int main()
 {
@@ -25,15 +26,11 @@ int main()
 
 int costruisci(int numero, int cifra)
 {
-    do{
-
-        if(numero > 0)
-        {    
-            numero /= 10;
-            cifra *= 10;
-        }
-    
-    }while(numero > 0);
+    while(numero > 0)
+    {
+        numero /= 10;
+        cifra *= 10;
+    }
 
     return cifra;
 }
