@@ -1,36 +1,33 @@
 /*programma che inverte le cifre di un numero tramite una funzione*/
 
 #include <stdio.h>
-int costruisci(int numero, int cifra);
+
+int costruisci(int numero);
 
 int main()
 {
-    int numero, cifra, inverso = 0, pesocifra;
+    int numero, inverso;
     
     printf("inserisci il numero da invertire");
     scanf("%d", &numero);
 
-    do{
-
-        cifra = numero % 10;
-        numero /= 10;
-        pesocifra = costruisci(numero, cifra);
-        inverso += pesocifra;
-
-    }while(numero > 0);
+    inverso = costruisci(numero);
 
     printf("il numero invertito e' : %d ", inverso);
 
     return 0;
 }
 
-int costruisci(int numero, int cifra)
+int costruisci(int numero)
 {
+    int inverso = 0, cifra;
+
     while(numero > 0)
     {
+        cifra = numero % 10;
         numero /= 10;
-        cifra *= 10;
+        inverso = inverso * 10 + cifra;
     }
 
-    return cifra;
+     return inverso;
 }
