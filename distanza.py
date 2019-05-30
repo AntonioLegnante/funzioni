@@ -7,15 +7,16 @@ def punti():
     return (x, y)
 
 def distanza(A, B):
-    return abs(((A[1] - A[0]) ** 2 + (B[1]- B[0]) ** 2) ** 0.5)
+    return abs(((B[1] - A[1]) ** 2 + (B[0]- A[0]) ** 2) ** 0.5)
 
-def stampa(A, B):
+def stampa(A):
     print("cordinate del punto A : ", A)
-    print("cordinate del punto B : ", B)
+
 
 A = punti()
 B = punti()
-stampa(A, B)
+stampa(A)
+stampa(B)
 distanza = distanza(A, B)
 
 print ("la distanza tra i punti A e B : ", distanza)
